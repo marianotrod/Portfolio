@@ -225,7 +225,6 @@ html[lang="en"] .lang-toggle__opt[data-opt="en"] { color: var(--accent); }
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   border: 4px solid #000;
   box-shadow: 10px 10px 0 var(--accent-3);
-  image-rendering: pixelated;
 }
 
 /* ---------------- Secciones ---------------- */
