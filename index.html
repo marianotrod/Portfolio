@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio de Mariano Trod – Estudiante de Producción de Videojuegos y Entretenimiento Digital (UNRaf).">
+  <title>Mariano Trod | Portfolio</title>
+
+  <!-- Fuentes: Press Start 2P (títulos retro) + Inter (texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Aplica el idioma guardado antes de dibujar la página (evita un "parpadeo") -->
+  <script>
+    try {
+      var l = localStorage.getItem('lang');
+      document.documentElement.lang = (l === 'en') ? 'en' : 'es';
+    } catch (e) {}
+  </script>
+</head>
+<body>
+
+  <!--
+    CÓMO FUNCIONA EL IDIOMA:
+    Cada texto está dos veces, uno con data-lang="es" y otro con data-lang="en".
+    El CSS muestra sólo el del idioma activo. Para editar un texto, cambiá los dos.
+  -->
+
+  <!-- ===================== NAVEGACIÓN ===================== -->
+  <header class="header">
+    <nav class="nav container">
+      <a href="#inicio" class="nav__logo">MT<span class="blink">_</span></a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="#sobre-mi" class="nav__link"><span data-lang="es">Sobre mí</span><span data-lang="en">About</span></a></li>
+        <li><a href="#habilidades" class="nav__link"><span data-lang="es">Habilidades</span><span data-lang="en">Skills</span></a></li>
+        <li><a href="#proyectos" class="nav__link"><span data-lang="es">Proyectos</span><span data-lang="en">Projects</span></a></li>
+        <li><a href="#formacion" class="nav__link"><span data-lang="es">Formación</span><span data-lang="en">Education</span></a></li>
+        <li><a href="#contacto" class="nav__link"><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></a></li>
+      </ul>
+
+      <!-- Botón de idioma -->
+      <button class="lang-toggle" id="langToggle" aria-label="Cambiar idioma / Change language">
+        <span class="lang-toggle__opt" data-opt="es">ES</span>
+        <span class="lang-toggle__sep">/</span>
+        <span class="lang-toggle__opt" data-opt="en">EN</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===================== INICIO ===================== -->
+    <section class="hero" id="inicio">
+      <div class="container hero__content">
+        <div class="hero__text">
+          <p class="hero__greeting">
+            <span data-lang="es">&gt; ¡Hola! Soy</span>
+            <span data-lang="en">&gt; Hi! I'm</span>
+          </p>
+          <h1 class="hero__name">Mariano Trod</h1>
+          <h2 class="hero__role">
+            <span data-lang="es">Estudiante de Producción de Videojuegos y Entretenimiento Digital</span>
+            <span data-lang="en">Video Game Production &amp; Digital Entertainment Student</span>
+          </h2>
+          <p class="hero__desc" data-lang="es">
+            Estudio la Tecnicatura en Producción de Videojuegos y Entretenimiento Digital en la UNRaf.
+            Combino el dibujo y la ilustración con el desarrollo de juegos en pixel art.
+          </p>
+          <p class="hero__desc" data-lang="en">
+            I'm studying Video Game Production and Digital Entertainment at UNRaf (Argentina).
+            I combine drawing and illustration with pixel art game development.
+          </p>
+          <div class="hero__buttons">
+            <a href="#proyectos" class="btn btn--primary">
+              <span data-lang="es">Ver proyectos</span><span data-lang="en">See projects</span>
+            </a>
+            <a href="#contacto" class="btn btn--outline">
+              <span data-lang="es">Contactame</span><span data-lang="en">Contact me</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Para usar tu foto: reemplazá el <div> por <img src="img/perfil.jpg" alt="Mariano Trod" class="avatar"> -->
+        <div class="avatar" aria-hidden="true">MT</div>
+      </div>
+    </section>
+
+    <!-- ===================== SOBRE MÍ ===================== -->
+    <section class="section" id="sobre-mi">
+      <div class="container">
+        <h2 class="section__title">
+          <span data-lang="es">Sobre mí</span><span data-lang="en">About me</span>
+        </h2>
+        <div class="about">
+          <div class="about__text">
+            <p data-lang="es">
+              Soy estudiante de 2.º año de la <strong>Tecnicatura en Producción de Videojuegos y
+              Entretenimiento Digital</strong> en la <strong>Universidad Nacional de Rafaela (UNRaf)</strong>.
+            </p>
+            <p data-lang="en">
+              I'm a 2nd-year student of the <strong>Video Game Production and Digital Entertainment</strong>
+              technical degree at the <strong>National University of Rafaela (UNRaf)</strong>, Argentina.
+            </p>
+            <p data-lang="es">
+              Me gustan los videojuegos, el cine y la lectura. Vengo del dibujo y la ilustración,
+              y en la carrera empecé a llevar esas ideas a juegos jugables.
+            </p>
+            <p data-lang="en">
+              I love video games, movies and reading. My background is in drawing and illustration,
+              and in my studies I started turning those ideas into playable games.
+            </p>
+          </div>
+          <ul class="about__facts">
+            <li>
+              <span class="about__icon">▶</span>
+              <span data-lang="es">2.º año – UNRaf</span>
+              <span data-lang="en">2nd year – UNRaf</span>
+            </li>
+            <li>
+              <span class="about__icon">▶</span>
+              <span data-lang="es">Español nativo · Inglés (buen nivel)</span>
+              <span data-lang="en">Native Spanish · Good command of English</span>
+            </li>
+            <li>
+              <span class="about__icon">▶</span>
+              <span data-lang="es">Videojuegos · Cine · Lectura</span>
+              <span data-lang="en">Video games · Movies · Reading</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HABILIDADES ===================== -->
+    <section class="section section--alt" id="habilidades">
+      <div class="container">
+        <h2 class="section__title">
+          <span data-lang="es">Habilidades</span><span data-lang="en">Skills</span>
+        </h2>
+        <div class="skills">
+          <article class="panel">
+            <h3 class="panel__title">
+              <span data-lang="es">Arte</span><span data-lang="en">Art</span>
+            </h3>
+            <ul class="tags">
+              <li><span data-lang="es">Dibujo</span><span data-lang="en">Drawing</span></li>
+              <li><span data-lang="es">Ilustración</span><span data-lang="en">Illustration</span></li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h3 class="panel__title">
+              <span data-lang="es">Desarrollo con IA</span><span data-lang="en">AI-assisted development</span>
+            </h3>
+            <p class="panel__note panel__note--top" data-lang="es">
+              La programación de mis proyectos la hice con Claude, como promueve la materia.
+              Yo me encargo del diseño, las ideas y las pruebas.
+            </p>
+            <p class="panel__note panel__note--top" data-lang="en">
+              The code in my projects was written with Claude, as encouraged by the course.
+              I handle the design, the ideas and the playtesting.
+            </p>
+            <p class="panel__label">
+              <span data-lang="es">Herramientas:</span><span data-lang="en">Tools:</span>
+            </p>
+            <ul class="tags">
+              <li>Claude</li>
+              <li>Phaser 3</li>
+              <li>Godot</li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h3 class="panel__title">
+              <span data-lang="es">Idiomas</span><span data-lang="en">Languages</span>
+            </h3>
+            <ul class="tags">
+              <li><span data-lang="es">Español – nativo</span><span data-lang="en">Spanish – native</span></li>
+              <li><span data-lang="es">Inglés – buen nivel</span><span data-lang="en">English – good command</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROYECTOS ===================== -->
+    <section class="section" id="proyectos">
+      <div class="container">
+        <h2 class="section__title">
+          <span data-lang="es">Proyectos</span><span data-lang="en">Projects</span>
+        </h2>
+
+        <!-- ---------- Desarrollo Tecnológico 2 ---------- -->
+        <h3 class="subject">
+          <span data-lang="es">Desarrollo Tecnológico 2</span>
+          <span data-lang="en">Technological Development 2</span>
+        </h3>
+        <div class="projects">
+
+          <!-- Ninja Moncho -->
+          <article class="card">
+            <img src="img/ninja-moncho.png" alt="Captura de Ninja Moncho" class="card__media" loading="lazy">
+            <div class="card__body">
+              <h4 class="card__title">Ninja Moncho</h4>
+              <p class="card__desc" data-lang="es">
+                Plataformero pixel art de pantalla fija en el que hay que recoger talismanes antes de que se acabe el tiempo.
+              </p>
+              <p class="card__desc" data-lang="en">
+                Single-screen pixel art platformer where you must collect talismans before time runs out.
+              </p>
+              <ul class="tags tags--small">
+                <li>Phaser 3</li><li>JavaScript</li><li>Pixel art</li>
+              </ul>
+              <p class="card__meta">
+                <span data-lang="es">Autor:</span><span data-lang="en">Author:</span> Mariano Trod
+              </p>
+              <p class="card__meta card__meta--credits">
+                <span data-lang="es">Gráficos y música de <em>Ninja Kid 2</em> (UPL)</span>
+                <span data-lang="en">Graphics and music from <em>Ninja Kid 2</em> (UPL)</span>
+              </p>
+              <div class="card__links">
+                <a href="https://github.com/marianotrod/NinjaMoncho" target="_blank" rel="noopener" class="btn btn--small btn--outline">
+                  <span data-lang="es">Código</span><span data-lang="en">Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Maya Explorer -->
+          <article class="card">
+            <img src="img/maya-explorer.png" alt="Captura de Maya Explorer" class="card__media" loading="lazy">
+            <div class="card__body">
+              <h4 class="card__title">Maya Explorer</h4>
+              <p class="card__desc" data-lang="es">
+                Plataformero con scroll lateral: recolectá las joyas y esquivá a los enemigos en una carrera contra reloj.
+              </p>
+              <p class="card__desc" data-lang="en">
+                Side-scrolling platformer: collect the jewels and dodge enemies in a race against the clock.
+              </p>
+              <ul class="tags tags--small">
+                <li>Phaser 3</li><li>JavaScript</li><li>Pixel art</li>
+              </ul>
+              <p class="card__meta">
+                <span data-lang="es">Autor:</span><span data-lang="en">Author:</span> Mariano Trod
+              </p>
+              <div class="card__links">
+                <a href="https://marianotrod.github.io/MayaExplorer/" target="_blank" rel="noopener" class="btn btn--small btn--primary">
+                  <span data-lang="es">Jugar</span><span data-lang="en">Play</span>
+                </a>
+                <a href="https://github.com/marianotrod/MayaExplorer" target="_blank" rel="noopener" class="btn btn--small btn--outline">
+                  <span data-lang="es">Código</span><span data-lang="en">Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Ninja Moncho Plus -->
+          <article class="card">
+            <img src="img/ninja-moncho-plus.png" alt="Captura de Ninja Moncho Plus" class="card__media" loading="lazy">
+            <div class="card__body">
+              <h4 class="card__title">Ninja Moncho Plus</h4>
+              <p class="card__desc" data-lang="es">
+                Evolución de Ninja Moncho con editor de niveles, nuevas funcionalidades, más niveles,
+                más enemigos y una nueva fase de combate. Para 1 o 2 jugadores.
+              </p>
+              <p class="card__desc" data-lang="en">
+                The evolution of Ninja Moncho, with a level editor, new features, more levels,
+                more enemies and a new combat phase. For 1 or 2 players.
+              </p>
+              <ul class="tags tags--small">
+                <li>Phaser 3</li><li>JavaScript</li><li><span data-lang="es">Editor de niveles</span><span data-lang="en">Level editor</span></li>
+              </ul>
+              <p class="card__meta">
+                <span data-lang="es">Autores:</span><span data-lang="en">Authors:</span> Mariano Trod, Santiago Tornau
+              </p>
+              <p class="card__meta card__meta--credits">
+                <span data-lang="es">Gráficos y música de <em>Ninja Kid 2</em> (UPL)</span>
+                <span data-lang="en">Graphics and music from <em>Ninja Kid 2</em> (UPL)</span>
+              </p>
+              <div class="card__links">
+                <a href="https://marianotrod.github.io/NinjaMonchoPlus/" target="_blank" rel="noopener" class="btn btn--small btn--primary">
+                  <span data-lang="es">Jugar</span><span data-lang="en">Play</span>
+                </a>
+                <a href="https://github.com/marianotrod/NinjaMonchoPlus" target="_blank" rel="noopener" class="btn btn--small btn--outline">
+                  <span data-lang="es">Código</span><span data-lang="en">Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- ---------- Taller de Producción de Juegos 2 ---------- -->
+        <h3 class="subject">
+          <span data-lang="es">Taller de Producción de Juegos 2</span>
+          <span data-lang="en">Game Production Workshop 2</span>
+        </h3>
+        <div class="projects">
+
+          <!-- Cazadora Invisible -->
+          <article class="card">
+            <img src="img/cazadora-invisible.png" alt="Captura de Cazadora Invisible" class="card__media" loading="lazy">
+            <div class="card__body">
+              <h4 class="card__title">
+                <span data-lang="es">Cazadora Invisible</span>
+                <span data-lang="en">Cazadora Invisible <small>(The Invisible Huntress)</small></span>
+              </h4>
+              <p class="card__desc" data-lang="es">
+                Plataformero de sigilo y combate en el que una guerrera nativa debe enfrentarse a los invasores
+                europeos o evadirlos para rescatar a un miembro de su tribu.
+              </p>
+              <p class="card__desc" data-lang="en">
+                Stealth and combat platformer in which a native warrior must fight or evade European invaders
+                to rescue a member of her tribe.
+              </p>
+              <ul class="tags tags--small">
+                <li><span data-lang="es">Sigilo</span><span data-lang="en">Stealth</span></li>
+                <li><span data-lang="es">Combate</span><span data-lang="en">Combat</span></li>
+                <li>Godot</li>
+              </ul>
+              <p class="card__meta">
+                <span data-lang="es">Autores:</span><span data-lang="en">Authors:</span>
+                Mariano Trod, Santiago Tornau, Santiago Sapei
+              </p>
+              <div class="card__links">
+                <a href="https://marianotrod.github.io/TP3---Taller-Produccion-de-Juegos-2/" target="_blank" rel="noopener" class="btn btn--small btn--primary">
+                  <span data-lang="es">Jugar</span><span data-lang="en">Play</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FORMACIÓN ===================== -->
+    <section class="section section--alt" id="formacion">
+      <div class="container">
+        <h2 class="section__title">
+          <span data-lang="es">Formación</span><span data-lang="en">Education</span>
+        </h2>
+        <ol class="timeline">
+          <li class="timeline__item">
+            <span class="timeline__date">
+              <span data-lang="es">En curso – 2.º año</span><span data-lang="en">In progress – 2nd year</span>
+            </span>
+            <h3>
+              <span data-lang="es">Tecnicatura en Producción de Videojuegos y Entretenimiento Digital</span>
+              <span data-lang="en">Technical Degree in Video Game Production and Digital Entertainment</span>
+            </h3>
+            <p class="timeline__place">
+              <span data-lang="es">Universidad Nacional de Rafaela (UNRaf)</span>
+              <span data-lang="en">National University of Rafaela (UNRaf)</span>
+            </p>
+            <p data-lang="es">Materias destacadas: Desarrollo Tecnológico 2, Taller de Producción de Juegos 2.</p>
+            <p data-lang="en">Highlighted courses: Technological Development 2, Game Production Workshop 2.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACTO ===================== -->
+    <section class="section" id="contacto">
+      <div class="container contact">
+        <h2 class="section__title">
+          <span data-lang="es">Contacto</span><span data-lang="en">Contact</span>
+        </h2>
+        <p class="contact__text" data-lang="es">
+          ¿Querés hablar sobre un proyecto, una colaboración o una oportunidad? Escribime.
+        </p>
+        <p class="contact__text" data-lang="en">
+          Want to talk about a project, a collaboration or an opportunity? Get in touch.
+        </p>
+        <div class="contact__links">
+          <a href="mailto:mariano.trod@gmail.com" class="contact__item">
+            <span class="contact__label">Email</span>
+            <span class="contact__value">mariano.trod@gmail.com</span>
+          </a>
+          <a href="https://www.linkedin.com/in/mariano-trod-9b09b225/" target="_blank" rel="noopener" class="contact__item">
+            <span class="contact__label">LinkedIn</span>
+            <span class="contact__value">mariano-trod</span>
+          </a>
+          <a href="https://github.com/marianotrod" target="_blank" rel="noopener" class="contact__item">
+            <span class="contact__label">GitHub</span>
+            <span class="contact__value">marianotrod</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== PIE ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year">2026</span> Mariano Trod</p>
+      <a href="#inicio" class="footer__top">
+        <span data-lang="es">▲ Volver arriba</span><span data-lang="en">▲ Back to top</span>
+      </a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
